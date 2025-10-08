@@ -24,6 +24,7 @@ fun RegisterScreen(
     onBack: () -> Unit,
     onSuccess: () -> Unit,
     authViewModel: AuthViewModel
+
 ) {
     var name by remember { mutableStateOf("") }
     var email by remember { mutableStateOf("") }
