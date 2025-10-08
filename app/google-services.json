@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1044123606955",
+    "project_id": "login-63718",
+    "storage_bucket": "login-63718.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044123606955:android:8624fb296de4a3f5267cee",
+        "android_client_info": {
+          "package_name": "com.evalenzuela.login"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Hj4naunGwGhMOy1YKf8HcGAuBwqZgPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1044123606955:android:c98e2a34747adaa2267cee",
+        "android_client_info": {
+          "package_name": "com.evalenzuela.loginkotlin"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6Hj4naunGwGhMOy1YKf8HcGAuBwqZgPc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
