@@ -30,7 +30,7 @@ Antes de comenzar, asegúrate de tener:
 6. Colócalo dentro de la carpeta (app/)
 7. Agregar dependencias de Firebase (build.gradle (Project))
 8. Luego abre build.gradle (Module: app)
-9. Habilitar autenticación en Firebase
+9. Habilitar autenticación en Firebase:
    1. En tu consola de Firebase, ve a Authentication
    2. En la pestaña Método de inicio de sesión, habilita Correo electrónico y contraseña.
 
