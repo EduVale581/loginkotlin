@@ -96,6 +96,28 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
                         indicatorColor = Color.Transparent
                     )
                 )
+                NavigationBarItem(
+                    selected = selectedDestination == "post",
+                    onClick = {
+                        navController.navigate(route = "post")
+                        selectedDestination = "post"
+                    },
+                    icon = {
+                        Icon(
+                            Icons.Default.Person,
+                            contentDescription = "post",
+
+                            )
+                    },
+                    label = { Text("Post") },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = White,
+                        selectedTextColor = White,
+                        unselectedIconColor = Gray,
+                        unselectedTextColor = Gray,
+                        indicatorColor = Color.Transparent
+                    )
+                )
         } }
     ) { innerPadding ->
         NavHost(
@@ -105,6 +127,7 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
         ) {
             composable("home_user") { HomeScreen() }
             composable("add") { AddScreen() }
+            composable("post") { AddScreen() }
             composable("perfil") { ProfileScreen(authViewModel, navControllerApp) }
         }
     }
