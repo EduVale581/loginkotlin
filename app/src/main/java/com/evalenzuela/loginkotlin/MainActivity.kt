@@ -26,6 +26,8 @@ class MainActivity : ComponentActivity() {
         val currentUser = FirebaseAuth.getInstance().currentUser
         val isLoggedIn = currentUser != null
 
+
+
         // Dibujamos la app
         setContent {
             LoginkotlinTheme {
