@@ -15,6 +15,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.*
 import com.evalenzuela.loginkotlin.ui.screens.user.AddScreen
 import com.evalenzuela.loginkotlin.ui.screens.user.HomeScreen
+import com.evalenzuela.loginkotlin.ui.screens.user.PostScreen
 import com.evalenzuela.loginkotlin.ui.screens.user.ProfileScreen
 import com.evalenzuela.loginkotlin.viewmodel.AuthViewModel
 import com.evalenzuela.loginkotlin.ui.theme.*
@@ -127,7 +128,7 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
         ) {
             composable("home_user") { HomeScreen() }
             composable("add") { AddScreen() }
-            composable("post") { AddScreen() }
+            composable("post") { PostScreen() }
             composable("perfil") { ProfileScreen(authViewModel, navControllerApp) }
         }
     }
