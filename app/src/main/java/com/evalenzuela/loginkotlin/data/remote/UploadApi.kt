@@ -1,0 +1,17 @@
+package com.evalenzuela.loginkotlin.data.remote
+
+import com.evalenzuela.loginkotlin.data.model.UploadResponse
+import okhttp3.MultipartBody
+import retrofit2.Response
+import okhttp3.ResponseBody
+import retrofit2.http.Multipart
+import retrofit2.http.POST
+import retrofit2.http.Part
+
+interface UploadApi {
+    @Multipart
+    @POST("api/v1/upload")
+    suspend fun uploadFile(
+        @Part file: MultipartBody.Part
+    ): Response<UploadResponse>
+}

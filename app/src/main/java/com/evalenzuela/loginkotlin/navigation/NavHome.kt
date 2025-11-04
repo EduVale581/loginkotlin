@@ -4,8 +4,12 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material.icons.filled.DocumentScanner
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.Publish
+import androidx.compose.material.icons.filled.Send
+import androidx.compose.material.icons.filled.Upload
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
@@ -17,6 +21,7 @@ import com.evalenzuela.loginkotlin.ui.screens.user.AddScreen
 import com.evalenzuela.loginkotlin.ui.screens.user.HomeScreen
 import com.evalenzuela.loginkotlin.ui.screens.user.PostScreen
 import com.evalenzuela.loginkotlin.ui.screens.user.ProfileScreen
+import com.evalenzuela.loginkotlin.ui.screens.user.UploadFileScreen
 import com.evalenzuela.loginkotlin.viewmodel.AuthViewModel
 import com.evalenzuela.loginkotlin.ui.theme.*
 
@@ -105,7 +110,7 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
                     },
                     icon = {
                         Icon(
-                            Icons.Default.Person,
+                            Icons.Default.Publish,
                             contentDescription = "post",
 
                             )
@@ -119,6 +124,30 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
                         indicatorColor = Color.Transparent
                     )
                 )
+                NavigationBarItem(
+                    selected = selectedDestination == "upload",
+                    onClick = {
+                        navController.navigate(route = "upload")
+                        selectedDestination = "upload"
+                    },
+                    icon = {
+                        Icon(
+                            Icons.Default.Upload,
+                            contentDescription = "upload",
+
+                            )
+                    },
+                    label = { Text("Upload") },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = White,
+                        selectedTextColor = White,
+                        unselectedIconColor = Gray,
+                        unselectedTextColor = Gray,
+                        indicatorColor = Color.Transparent
+                    )
+                )
+
+
         } }
     ) { innerPadding ->
         NavHost(
@@ -129,6 +158,7 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
             composable("home_user") { HomeScreen() }
             composable("add") { AddScreen() }
             composable("post") { PostScreen() }
+            composable("upload") { UploadFileScreen() }
             composable("perfil") { ProfileScreen(authViewModel, navControllerApp) }
         }
     }

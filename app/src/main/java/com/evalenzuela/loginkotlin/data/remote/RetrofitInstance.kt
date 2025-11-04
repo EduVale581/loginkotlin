@@ -11,4 +11,12 @@ object RetrofitInstance {
             .create(ApiService::class.java)
 
     }
+
+    val apiFiles: UploadApi by lazy {
+        Retrofit.Builder()
+            .baseUrl("https://tmpfiles.org/") // 👈 Base URL
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+            .create(UploadApi::class.java)
+    }
 }
