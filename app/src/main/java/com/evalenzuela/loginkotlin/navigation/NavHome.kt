@@ -81,28 +81,6 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
                     )
                 )
                 NavigationBarItem(
-                    selected = selectedDestination == "perfil",
-                    onClick = {
-                        navController.navigate(route = "perfil")
-                        selectedDestination = "perfil"
-                    },
-                    icon = {
-                        Icon(
-                            Icons.Default.Person,
-                            contentDescription = "perfil",
-
-                        )
-                    },
-                    label = { Text("Perfil") },
-                    colors = NavigationBarItemDefaults.colors(
-                        selectedIconColor = White,
-                        selectedTextColor = White,
-                        unselectedIconColor = Gray,
-                        unselectedTextColor = Gray,
-                        indicatorColor = Color.Transparent
-                    )
-                )
-                NavigationBarItem(
                     selected = selectedDestination == "post",
                     onClick = {
                         navController.navigate(route = "post")
@@ -146,6 +124,29 @@ fun NavHome(authViewModel: AuthViewModel, navControllerApp: NavHostController) {
                         indicatorColor = Color.Transparent
                     )
                 )
+                NavigationBarItem(
+                    selected = selectedDestination == "perfil",
+                    onClick = {
+                        navController.navigate(route = "perfil")
+                        selectedDestination = "perfil"
+                    },
+                    icon = {
+                        Icon(
+                            Icons.Default.Person,
+                            contentDescription = "perfil",
+
+                        )
+                    },
+                    label = { Text("Perfil") },
+                    colors = NavigationBarItemDefaults.colors(
+                        selectedIconColor = White,
+                        selectedTextColor = White,
+                        unselectedIconColor = Gray,
+                        unselectedTextColor = Gray,
+                        indicatorColor = Color.Transparent
+                    )
+                )
+
 
 
         } }
