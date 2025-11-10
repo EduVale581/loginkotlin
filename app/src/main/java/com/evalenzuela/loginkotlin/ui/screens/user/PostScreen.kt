@@ -29,8 +29,10 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
     val posts = viewModel.postList.collectAsState().value
 
     Column(
-        modifier = Modifier.fillMaxSize()
-            .fillMaxSize().background(Black).padding(16.dp)
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Black)
+            .padding(16.dp)
     ) {
         Text(
             text = "Listado de Posts",
@@ -39,17 +41,18 @@ fun PostScreen(viewModel: PostViewModel = viewModel()) {
             color = White
         )
         Spacer(Modifier.height(16.dp))
-        LazyColumn(
-            modifier = Modifier.fillMaxSize()
-        ) {
-           items(posts) {
-               post ->
-               Card(modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp)) {
-                   Text(text = "Titulo: ${post.title}")
-                   Spacer(modifier = Modifier.padding(16.dp))
-                   Text(text = post.body, style = MaterialTheme.typography.bodyMedium)
-               }
-           }
+        LazyColumn(modifier = Modifier.fillMaxSize()) {
+            items(posts) { post ->
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 8.dp)
+                ) {
+                    Text(text = "Titulo: ${post.title}")
+                    Spacer(modifier = Modifier.padding(16.dp))
+                    Text(text = post.body, style = MaterialTheme.typography.bodyMedium)
+                }
+            }
         }
     }
 }

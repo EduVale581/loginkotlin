@@ -4,15 +4,17 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.evalenzuela.loginkotlin.data.model.Post
 import com.evalenzuela.loginkotlin.data.repository.PostRepository
+import com.evalenzuela.loginkotlin.data.repository.PostRepositoryInterface
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
-class PostViewModel : ViewModel() {
-    private val repository = PostRepository()
+class PostViewModel(
+    private val repository: PostRepositoryInterface = PostRepository()
+) : ViewModel() {
 
-    private val _postList = MutableStateFlow<List<Post>>(emptyList())
-    val postList: StateFlow<List<Post>> = _postList
+    protected val _postList = MutableStateFlow<List<Post>>(emptyList())
+    open val postList: StateFlow<List<Post>> = _postList
 
     init {
         fetchPosts()
@@ -29,3 +31,5 @@ class PostViewModel : ViewModel() {
     }
 
 }
+
+
