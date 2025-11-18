@@ -7,6 +7,8 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
+
+// Nombre de usuario
 val Context.dataStore by preferencesDataStore("user_prefs")
 
 class SessionManager(private val context: Context) {
